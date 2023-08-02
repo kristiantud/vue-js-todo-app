@@ -52,21 +52,23 @@
 <template>
   <main class="app">
     <section class="greeting">
-      <h2 class="title">
-        Hello, <input type="text" placeholder="Name" v-model="name">
-      </h2>
+      <h3 class="title">
+        Hello, <input class="input-text name" type="text" placeholder="Name" v-model="name">
+      </h3>
     </section>
 
     <section class="create-todo">
-      <h3>Create a todo</h3>
+      <p>Create a todo</p>
       <form @submit.prevent="addTodo">
-        <h4>What's on your todo list?</h4>
-        <input type="text" placeholder="e.g. make a video" v-model="input_content">
+        <h4 style="margin: 0; margin-bottom: 5px;">What's on your todo list?</h4>
+        <input class="input-text task" type="text" placeholder="e.g. make a video" v-model="input_content">
       
       
-        <h4>Pick a category</h4>
+        <p>Pick a category</p>
         <div class="options">
+          
           <label for="">
+            <div class="label-contents">
             <input 
               type="radio" 
               name="category"
@@ -74,37 +76,36 @@
               v-model="input_category" />
               <span class="bubble business"></span>
               <div>Business</div>
+          </div>
           </label>
 
           <label for="">
-            <input 
+            <div class="label-contents">
+              <input 
               type="radio" 
               name="category"
               value="personal" 
               v-model="input_category" />
               <span class="bubble personal"></span>
               <div>Personal</div>
+            </div>
           </label>
         </div>
 
-      <input type="submit" value="Add todo">
-      
-      
+      <input class="input-submit" type="submit" value="Add todo">
       </form>
-      
-
-  
     </section>
 
     <section class="todo-list">
-      <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+      <span>Todo List</span>
+      <div v-for="todo in todos_asc" :class="`todo-item ${todo.done}`">
         <label>
           <input type="checkbox" v-model="todo.done"> <!-- links the checkbox to the corresponding todo.done value -->
           <span :class="`bubble ${todo.category}`"></span>
         </label>
 
         <div class="todo-content">
-          <input type="text" v-model="todo.content">
+          <input class="input-text" type="text" v-model="todo.content">
         </div>
 
         <div class="actions">
