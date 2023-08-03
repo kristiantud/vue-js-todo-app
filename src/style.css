@@ -6,6 +6,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: rgb(230, 228, 228);
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -26,8 +27,7 @@ h1 {
 }
 
 .input-text{
-  font-weight: bold;
-  font-size: 20px;
+  width: 100px;
   height: 30px;
   
   
@@ -35,9 +35,12 @@ h1 {
 
 .input-text.task{
   width: 100%;
+  box-sizing: border-box;
 }
 
 .input-text.name{
+  font-weight: bold;
+  font-size: 20px;
   background-color: rgb(230, 228, 228);
   border-style: hidden;
 }
@@ -48,10 +51,15 @@ h1 {
   margin-bottom: 20px;
 }
 
+.greeting h3{
+  margin: 0;
+}
+
 .options label {
   background-color: rgb(255, 255, 255);
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
+  margin: 5px;
   border-radius: 10px;
   position: relative;
   
@@ -66,6 +74,14 @@ h1 {
 }
 
 .create-todo{
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 20px;
+}
+
+.todo-list{
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
   margin-bottom: 50px;
 }
 
@@ -87,3 +103,4 @@ h1 {
 button {
 
 }
+
