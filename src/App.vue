@@ -58,13 +58,14 @@
     </section>
 
     <section class="create-todo">
-      <p>Create a todo</p>
+      
+      <span class="label">Create a todo</span>
       <form @submit.prevent="addTodo">
-        <h4 style="margin: 0; margin-bottom: 5px;">What's on your todo list?</h4>
+        <h4 style="margin: 0; margin-bottom: 5px; margin-top: 10px; font-size: 12px;">What's on your todo list?</h4>
         <input class="input-text task" type="text" placeholder="e.g. make a video" v-model="input_content">
       
       
-        <p>Pick a category</p>
+        <span class="label">Pick a category</span>
         <div class="options">
           
           <label for="">
@@ -97,16 +98,19 @@
     </section>
 
     <section class="todo-list">
-      <span>Todo List</span>
+      <span class="">Todo List</span>
       <div v-for="todo in todos_asc" :class="`todo-item ${todo.done}`">
-        <label>
+        <div class="todo-left-side">
+          <label class="todo-checkbox">
           <input type="checkbox" v-model="todo.done"> <!-- links the checkbox to the corresponding todo.done value -->
           <span :class="`bubble ${todo.category}`"></span>
-        </label>
+          </label>
 
-        <div class="todo-content">
-          <input class="input-text" type="text" v-model="todo.content">
+          <div class="todo-content">
+            <input class="input-text todos" type="text" v-model="todo.content">
+          </div>
         </div>
+        
 
         <div class="actions">
           <button class="delete" @click="removeTodo(todo)">Delete</button>
